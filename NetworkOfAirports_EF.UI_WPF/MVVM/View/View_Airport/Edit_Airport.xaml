@@ -1,0 +1,54 @@
+﻿<Window x:Class="NetworkOfAirports_EF.UI_WPF.MVVM.View.View_Airport.Edit_Airport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetworkOfAirports_EF.UI_WPF.MVVM.View.View_Airport"
+        mc:Ignorable="d"
+        Title="Edit_Airport" Height="220" Width="400">
+    <StackPanel>
+
+        <StackPanel Margin="15" HorizontalAlignment="Center">
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="20" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Margin" Value="25 0" />
+                    <Setter Property="Padding" Value="5 0" />
+                    <Setter Property="FontSize" Value="20" />
+                    <Setter Property="FontWeight" Value="Regular" />
+                    <Setter Property="MinWidth" Value="100" />
+                </Style>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Margin" Value="0 5" />
+                </Style>
+            </StackPanel.Resources>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <TextBlock Text="Airport's status code" Foreground="#1E3148"/>
+                <TextBox x:Name="AirportCode" Text="{Binding AirportCode}" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <TextBlock Text="Airline's title" Foreground="#1E3148"/>
+                <TextBox x:Name="AirportName" Text="{Binding AirportName}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <TextBlock Text="Citie's ID" Foreground="#1E3148"/>
+                <TextBox x:Name="CityId" Text="{Binding CityId}" />
+            </StackPanel>
+
+        </StackPanel>
+        <Button Content="Update" Click="Update_Click" Background="#FEDA15"
+                    Width="100" Height="30">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </StackPanel>
+</Window>

@@ -1,0 +1,77 @@
+﻿<Window x:Class="NetworkOfAirports_EF.UI_WPF.MVVM.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetworkOfAirports_EF.UI_WPF.MVVM.View"
+        mc:Ignorable="d"
+        Title="Network of Airports WPF" Height="600" Width="1240">
+
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle">
+            <Setter Property="Control.FontFamily" Value="Calibri"></Setter>
+            <Setter Property="Control.FontSize" Value="18"></Setter>
+            <Setter Property="Control.FontWeight" Value="Bold"></Setter>
+            <Setter Property="Control.Padding" Value="5"></Setter>
+            <Setter Property="Control.Margin" Value="5"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#EAEDF0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Background="#F8F8F8">
+            <ListBox.Resources>
+                
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="MinHeight" Value="50" />
+                    <Setter Property="FontSize" Value="25" />
+                    <Setter Property="Cursor" Value="Hand" />
+                </Style>
+
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="0 20 20 0"/>
+                </Style>
+            </ListBox.Resources>
+
+            <ListBoxItem Selected="AirlineSelect" 
+                         Content="Airlines"
+                         Foreground="#3C3630">
+                <ListBoxItem.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Border CornerRadius="20" Background="#FEDA15" Width="15" Height="15"
+                                    Margin="0 0 15 0">
+                            </Border>
+                            <TextBlock FontFamily="Rubik" FontSize="20" 
+                                       Text="Airlines"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBoxItem.ContentTemplate>
+            </ListBoxItem>
+
+            <ListBoxItem Selected="AirportSelect" 
+                         Content="Airlines"
+                         Foreground="#3C3630">
+                <ListBoxItem.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Border CornerRadius="20" Background="#7E9DC2" Width="15" Height="15"
+                                    Margin="0 0 15 0">
+                            </Border>
+                            <TextBlock FontFamily="Rubik" FontSize="20" 
+                                       Text="Airports"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBoxItem.ContentTemplate>
+            </ListBoxItem>
+        </ListBox>
+
+        <ContentControl Grid.Column="1" x:Name="MainWindowContent">
+
+        </ContentControl>
+    </Grid>
+</Window>

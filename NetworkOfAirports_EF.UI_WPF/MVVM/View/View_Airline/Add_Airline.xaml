@@ -1,0 +1,44 @@
+﻿<Window x:Class="NetworkOfAirports_EF.UI_WPF.MVVM.View.View_Airline.Add_Airline"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetworkOfAirports_EF.UI_WPF.MVVM.View.View_Airline"
+        mc:Ignorable="d"
+        Title="Add_Airline" Height="150" Width="400">
+    <StackPanel HorizontalAlignment="Center">
+
+        <StackPanel Margin="0 10" Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="20" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Margin" Value="25 0" />
+                    <Setter Property="Padding" Value="5 0" />
+                    <Setter Property="FontSize" Value="20" />
+                    <Setter Property="FontWeight" Value="Regular" />
+                    <Setter Property="MinWidth" Value="100" />
+                </Style>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Margin" Value="0 5" />
+                </Style>
+            </StackPanel.Resources>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Airline's title" Foreground="#1E3148"/>
+                <TextBox x:Name="AirlineName" />
+            </StackPanel>
+
+            <Button Content="Insert" Click="Add_Click" Background="#FF0F39" Width="100" Height="30"
+                    FontFamily="Rubik">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</Window>
